@@ -1,2 +1,2 @@
 # Calculadora
-Primeiro projeto de aprendizado da linguagem pytrhon , git e github.
+Primeiro projeto de aprendizado da linguagem python , git e github.
