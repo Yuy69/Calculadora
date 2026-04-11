@@ -1,103 +1,169 @@
-while True:
-
+while True:                     #Aqui a ideia pricipal é ter um while principal que faça tudo se manter em loop infinito e principalmente retornar ao menu sempre que necessario.
 
     print("""
     ===========CalculadoraV1=========
 
     ---------------------
-    [1]Adição
+    [1] Adição
     ---------------------
-    [2]Subtração
+    [2] Subtração
     ---------------------
-    [3]Multiplição
+    [3] Multiplicação
     ---------------------
-    [4]Divisão
+    [4] Divisão
     ---------------------
-    [5]Fechar
+    [5] Fechar
     ---------------------
-
-    ==================================
     """)
 
+    opcoes = input("Qual operação você deseja? R°=")
+    
 
-
-    opcoes = input("Qual operação você deseja?")
-
+    # <3================= ADIÇÃO =================<3
     if opcoes == "1":
-        numero1 = float(input("Digite um número.."))         #Este bloco representa o parte responsável por fazer o cálculo de adição.
-        numero2 = float(input("digite outro número.."))
+
+        numero1 = float(input("Digite um número: "))
+        numero2 = float(input("Digite outro número: "))
         calculo = numero1 + numero2
-        print(f"O resultado de sua operação foi:{calculo:.2f}")
-        continuar = input("Deseja voltar o menu se sim digite:[S] se não digite:[N]..").upper()
-        if continuar == "S":
-            print()
-            
 
-        elif continuar == "N":
-            print("Encerrando..")
-            break
-        
+        print(f"Resultado: {calculo:.2f}")
 
+        while True:                                #Novos whiles True criados para abrir novas repetições como "gavetas" abertas dentro de outras "gavetas"
+            continuar = input("""
+[1] Voltar ao menu
+[2] Continuar somando
+[3] Encerrar
+R°=
+""")
 
+            if continuar == "1":
+                break                       #Este break tem a função de quebrar a "gaveta" que guarda as opções da cadeia de adição e voltar para o while pricipal ou seja menu
+
+            elif continuar == "2":
+                numero = float(input("Digite um número: "))
+                calculo += numero  
+                print(f"Novo resultado: {calculo:.2f}")
+
+            elif continuar == "3":
+                print("Encerrando...")
+                exit()        #Este aprendi por agora ele basicamente encerra tudo de vez, muito util neste caso e basicamente quando a "gaveta" onde ele esta é aberta tudo é encerrado imediatamente.
+
+            else:
+                print("Opção inválida!")
+
+    # <3================= SUBTRAÇÃO =================<3
 
     elif opcoes == "2":
-        numero1 = float(input("Digite um número.."))          #Este bloco representa a parte responsável por fazer o cálculo de subtração.
-        numero2 = float(input("Digite outro número.."))
+
+        numero1 = float(input("Digite um número: "))
+        numero2 = float(input("Digite outro número: "))
         calculo = numero1 - numero2
-        print(f"O resultado de sua operação foi: {calculo:.2f}")
-        continuar = input("Deseja voltar o menu se sim digite:[S] se não digite:[N]..").upper()
-        if continuar == "S":
-            print()
-            
 
-        elif continuar == "N":
-            print("Encerrando..")
-            break
-        
+        print(f"Resultado: {calculo:.2f}")
 
+        while True:                       #Novos whiles True criados para abrir novas repetições como "gavetas" abertas dentro de outras "gavetas"
+            continuar = input("""
+[1] Voltar ao menu
+[2] Continuar subtraindo
+[3] Encerrar
+R°=
+""")
+
+            if continuar == "1":
+                break                         #Este break tem a função de quebrar a "gaveta" que guarda as opções da cadeia de adição e voltar para o while pricipal ou seja menu
+
+            elif continuar == "2":
+                numero = float(input("Digite um número: "))
+                calculo -= numero
+                print(f"Novo resultado: {calculo:.2f}")
+
+            elif continuar == "3":
+                print("Encerrando...")
+                exit()       #Este aprendi por agora ele basicamente encerra tudo de vez muito util neste caso e basicamente quando a "gaveta" onde ele esta é aberta tudo é encerrado imediatamente.
+
+            else:
+                print("Opção inválida!")
+
+
+    # <3================= MULTIPLICAÇÃO =================<3
 
     elif opcoes == "3":
-        numero1 = float(input("Digite um número.."))            #Este bloco representa a parte responsável por fazer o cálculo de multiplicação.
-        numero2 = float(input("Digite outro número.."))
+
+        numero1 = float(input("Digite um número: "))
+        numero2 = float(input("Digite outro número: "))
         calculo = numero1 * numero2
-        print(f"O resultado de sua operação foi: {calculo:.2f}")
-        continuar = input("Deseja voltar o menu se sim digite:[S] se não digite:[N]..").upper()
-        if continuar == "S":
-            print()
-            
 
-        elif continuar == "N":
-            print("Encerrando..")
-            break
-        
+        print(f"Resultado: {calculo:.2f}")
+
+        while True:                             #Novos whiles True criados para abrir novas repetições como "gavetas" abertas dentro de outras "gavetas"
+            continuar = input("""
+[1] Voltar ao menu
+[2] Continuar multiplicando
+[3] Encerrar
+R°=
+""")
+
+            if continuar == "1":
+                break                        #Este break tem a função de quebrar a "gaveta" que guarda as opções da cadeia de adição e voltar para o while pricipal ou seja menu
+
+            elif continuar == "2":
+                numero = float(input("Digite um número: "))
+                calculo *= numero
+                print(f"Novo resultado: {calculo:.2f}")
+
+            elif continuar == "3":
+                print("Encerrando...")
+                exit()                   #Este aprendi por agora ele basicamente encerra tudo de vez muito util neste caso e basicamente quando a "gaveta" onde ele esta é aberta tudo é encerrado imediatamente.
+
+            else:
+                print("Opção inválida!")
+
+    # <3================= DIVISÃO =================<3
+
     elif opcoes == "4":
-        numero1 = float(input("Digite um número.."))
-        numero2 = float(input("Digite outro número.."))
-        if numero2 == 0:      #se (número2) for igual a zero da erro pois zero nao pode ser dividido
-          print("Desculpe, zero não pode ser dividido")  #Este bloco representa a parte responsável por fazer o cálculo de divisão.  
-        
-        else:
-            calculo = numero1 / numero2
-            print(f"O resultado de sua operação foi: {calculo:.2f}")
 
-        continuar = input("Deseja voltar o menu se sim digite:[S] se não digite:[N]..").upper()
-        if continuar == "S":
-            print()
-            
+        numero1 = float(input("Digite um número: "))
+        numero2 = float(input("Digite outro número: "))
 
-        elif continuar == "N":
-            print("Encerrando..")
-            break
-        
+        if numero2 == 0:
+            print("Erro: não existe divisão por zero!")
+            continue
+
+        calculo = numero1 / numero2
+        print(f"Resultado: {calculo:.2f}")
+
+        while True:                #Novos whiles True criados para abrir novas repetições como "gavetas" abertas dentro de outras "gavetas"
+            continuar = input("""
+[1] Voltar ao menu
+[2] Continuar dividindo
+[3] Encerrar
+R°=
+""")
+
+            if continuar == "1":
+                break                #Este break tem a função de quebrar a "gaveta" que guarda as opções da cadeia de adição e voltar para o while pricipal ou seja menu
+
+            elif continuar == "2":
+                numero = float(input("Digite um número: "))
+
+                if numero == 0:
+                    print("Erro: não pode dividir por zero!")
+                else:
+                    calculo /= numero
+                    print(f"Novo resultado: {calculo:.2f}")
+
+            elif continuar == "3":
+                print("Encerrando...")
+                exit()       #Este aprendi por agora ele basicamente encerra tudo de vez muito util neste caso e basicamente quando a "gaveta" onde ele esta é aberta tudo é encerrado imediatamente.
+
+            else:
+                print("Opção inválida!")
+
+    #<3 ================= SAIR =================<3
     elif opcoes == "5":
-        print("Encerrando..")
-        break
+        print("Encerrando...")
+        break                   
 
-
+    #<3 ================= ERRO =================<3
     else:
-        print(f"""A opção: ({opcoes}) Não existe, digite uma opção valida dentre:
-    [1]
-    [2]
-    [3]""")    #Este else tem a função de mandar uma mensagem para o usuário de que ele não escolheu nenhuma opção que está disponível
-
-        
+        print(f"Opção ({opcoes}) inválida! Escolha entre [1-5].")  
