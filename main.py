@@ -20,38 +20,49 @@ while True:                     #Aqui a ideia pricipal é ter um while principal
 
 
     # <3================= ADIÇÃO =================<3
+
     if opcoes == "1":
+    
+        while True:
 
+            numero1 = (input("Digite um número: "))
+            numero2 = (input("Digite outro número: "))
 
-        numero1 = float(input("Digite um número: "))
-        numero2 = float(input("Digite outro número: "))
-        calculo = numero1 + numero2
+            if numero1.isnumeric() and numero2.isnumeric() :
 
-        print(f"Resultado: {calculo:.2f}")
-
-
-        while True:                                #Novos whiles True criados para abrir novas repetições como "gavetas" abertas dentro de outras "gavetas"
-            continuar = input("""
+                calculo = float(numero1) + float(numero2)
+                
+                print(f"Resultado: {calculo:.2f}") 
+            
+                while True:                                #Novos whiles True criados para abrir novas repetições como "gavetas" abertas dentro de outras "gavetas"
+                    continuar = input("""
 [1] Voltar ao menu
 [2] Continuar somando
 [3] Encerrar
 R°=
 """)
 
-            if continuar == "1":
-                break                       #Este break tem a função de quebrar a "gaveta" que guarda as opções da cadeia de adição e voltar para o while pricipal ou seja menu
+                    if continuar == "1":
+                                break                       #Este break tem a função de quebrar a "gaveta" que guarda as opções da cadeia de adição e voltar para o while pricipal ou seja menu
 
-            elif continuar == "2":
-                numero = float(input("Digite um número: "))
-                calculo += numero  
-                print(f"Novo resultado: {calculo:.2f}")
+                    elif continuar == "2":
+                                        numero = float(input("Digite um número: "))
+                                        calculo += numero  
+                                        print(f"Novo resultado: {calculo:.2f}")
 
-            elif continuar == "3":
-                print("Encerrando...")
-                exit()        #Este aprendi por agora ele basicamente encerra tudo de vez, muito util neste caso e basicamente quando a "gaveta" onde ele esta é aberta tudo é encerrado imediatamente.
+                    elif continuar == "3":
+                                        print("Encerrando...")
+                                        exit()        #Este aprendi por agora ele basicamente encerra tudo de vez, muito util neste caso e basicamente quando a "gaveta" onde ele esta é aberta tudo é encerrado imediatamente.
 
+                    else:
+                                        print("Opção inválida!")
             else:
-                print("Opção inválida!")
+                print("Digite apenas número por favor..")
+
+
+              
+
+
 
     # <3================= SUBTRAÇÃO =================<3
 
