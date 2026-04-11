@@ -17,16 +17,18 @@ while True:                     #Aqui a ideia pricipal é ter um while principal
     """)
 
     opcoes = input("Qual operação você deseja? R°=")
-    
+
 
     # <3================= ADIÇÃO =================<3
     if opcoes == "1":
+
 
         numero1 = float(input("Digite um número: "))
         numero2 = float(input("Digite outro número: "))
         calculo = numero1 + numero2
 
         print(f"Resultado: {calculo:.2f}")
+
 
         while True:                                #Novos whiles True criados para abrir novas repetições como "gavetas" abertas dentro de outras "gavetas"
             continuar = input("""
