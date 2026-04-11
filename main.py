@@ -23,9 +23,10 @@ while True:                     #Aqui a ideia pricipal é ter um while principal
 
     if opcoes == "1":
     
-        while True:        #Uma nova cadeia de repetição para tratar o erro de se o usuário colocar letras em (input) criados para somar onde os tiopos primitivos dendem a ser incopativeis a caracteres.
+        while True:        #Uma nova cadeia de repetição para tratar o erro de se o usuário colocar letras em (input) criados para somar onde os tiopos primitivos tendem a ser incopativeis a caracteres.
 
             try: #Este try vai tentar executar mantendo tudo que estiver em sua estrutura rodando, e se caso o usuario digitar uma letra então cai na exceção (except).
+
             #------------aqui acontece o calculo------------
                 numero1 = float((input("""Digite um número: 
 R°=""")))
@@ -53,9 +54,16 @@ R°=""")
                         break                       #Este break tem a função de quebrar a "gaveta" que guarda as opções da cadeia de adição e voltar para o while pricipal ou seja menu.
 
             elif continuar == "2":
-                                numero = float(input("Digite um número: "))
-                                calculo += numero  
-                                print(f"Novo resultado: {calculo:.2f}")
+                                
+                while True:
+
+                    try:
+                        numero = float(input("Digite um número: "))
+                        calculo += numero  
+                        print(f"Novo resultado: {calculo:.2f}")
+
+                    except:
+                        print("Por favor digite apenas números")
 
             elif continuar == "3":
                                 print("Encerrando...")
